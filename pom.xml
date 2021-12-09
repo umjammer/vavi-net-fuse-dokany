@@ -1,0 +1,97 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>vavi</groupId>
+  <artifactId>vavi-net-fuse-dokany</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+
+  <properties>
+    <vavi-net-fuse.groupId>vavi</vavi-net-fuse.groupId> <!-- com.github.umjammer -->
+    <vavi-net-fuse.version>0.1.7-SNAPSHOT</vavi-net-fuse.version>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <source>11</source>
+          <target>11</target>
+        </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
+
+  <repositories>
+    <repository>
+      <id>jitpack.io</id>
+      <url>https://jitpack.io</url>
+    </repository>
+  </repositories>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.junit</groupId>
+        <artifactId>junit-bom</artifactId>
+        <version>5.8.1</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <dependency>
+      <groupId>${vavi-net-fuse.groupId}</groupId>
+      <artifactId>vavi-net-fuse</artifactId>
+      <version>${vavi-net-fuse.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>dev.dokan</groupId>
+      <artifactId>dokan-java</artifactId>
+      <version>1.2.0-SNAPSHOT</version>
+    </dependency>
+
+    <dependency>
+      <groupId>vavi</groupId> <!-- com.github.umjammer -->
+      <artifactId>vavi-commons</artifactId>
+      <version>1.1.6-SNAPSHOT</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.platform</groupId>
+      <artifactId>junit-platform-commons</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>${vavi-net-fuse.groupId}</groupId>
+      <artifactId>vavi-net-fuse</artifactId>
+      <version>${vavi-net-fuse.version}</version>
+      <type>test-jar</type>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.jimfs</groupId>
+      <artifactId>jimfs</artifactId>
+      <version>1.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>
